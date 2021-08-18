@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdminService</name>
+    </assembly>
+    <members>
+        <member name="T:AdminService.Enums.LoggingMethod">
+            <summary>
+            LoggingMethod
+            </summary>
+        </member>
+        <member name="F:AdminService.Enums.LoggingMethod.NLog">
+            <summary>
+            NLOG
+            </summary>
+        </member>
+        <member name="T:AdminService.Filters.ModelValidationFilter">
+            <summary>
+            Model data validation filter.
+            </summary>
+        </member>
+        <member name="M:AdminService.Filters.ModelValidationFilter.GetModelValidationErrors(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Perform model validation State
+            </summary>
+            <param name="context"></param>
+            <returns>ErrorDetails</returns>
+        </member>
+        <member name="T:AdminService.Middlewares.HttpCodeAndLogMiddleware">
+            <summary>
+            HttpCodeAndLogMiddleware
+            </summary>
+        </member>
+        <member name="M:AdminService.Middlewares.HttpCodeAndLogMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AdminService.Middlewares.HttpCodeAndLogMiddleware"/> class.
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:AdminService.Middlewares.HttpCodeAndLogMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdminService.Middlewares.HttpCodeAndLogMiddleware.HandleExceptionAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="httpContext"></param>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdminService.Program.CreateHostBuilder(System.String[],System.String)">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <param name="loggingMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AdminService.ServiceConfigureExtension">
+            <summary>
+            ServiceConfigureExtension
+            </summary>
+        </member>
+        <member name="M:AdminService.ServiceConfigureExtension.AddCorsPolicy(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String)">
+            <summary>
+            Add cors policy to service.
+            </summary>
+            <param name="services"></param>
+            <param name="policyName"></param>
+        </member>
+        <member name="M:AdminService.ServiceConfigureExtension.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add swagger configuration to service.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AdminService.ServiceConfigureExtension.AddDependencyInjection(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            //Add dependency injection for the service.
+            </summary>
+        </member>
+        <member name="M:AdminService.ServiceConfigureExtension.AddServicesDependency(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Inject external services dependency client.
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AdminService.ServiceConfigureExtension.CreateInfoForApiVersion(Microsoft.AspNetCore.Mvc.ApiExplorer.ApiVersionDescription)">
+            <summary>
+            Extension method to create Api info version
+            </summary>
+            <param name="description"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AdminService.ServiceConfigureExtension.XmlCommentsFilePath">
+            <summary>
+            Extension method to include XML Comments.
+            </summary>
+        </member>
+        <member name="M:AdminService.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Service Startup.
+            </summary>
+            <param name="configuration"></param>
+            <param name="hostContext"></param>
+        </member>
+        <member name="P:AdminService.Startup.Configuration">
+            <summary>
+            IConfiguration
+            </summary>
+        </member>
+        <member name="P:AdminService.Startup.HostContext">
+            <summary>
+            IWebHostEnvironment
+            </summary>
+        </member>
+        <member name="M:AdminService.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:AdminService.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="provider"></param>
+        </member>
+        <member name="M:AdminService.SwaggerDefaultValues.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Applies the filter to retrieve ApiDescription for relevant information like attribute, route info at an instance or method level.
+            </summary>
+            <param name="operation"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:AdminService.V1.Controllers.PersonController">
+            <summary>
+            PersonController
+            </summary>
+        </member>
+        <member name="M:AdminService.V1.Controllers.PersonController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,AdminService.V1.Repository.IPersonRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AdminService.V1.Controllers.PersonController"/> class.
+            </summary>
+            <param name="configuration"></param>
+            <param name="personRepository"></param>
+        </member>
+        <member name="M:AdminService.V1.Controllers.PersonController.PostBank(AdminService.V1.Models.Request.PersonRequest)">
+            <summary>
+            Create a new person record in system.
+            </summary>
+            <param name="personRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdminService.V1.Models.Mapper.ModelMapper.CreatePerson(AdminService.V1.Models.Request.PersonRequest)">
+            <summary>
+            Person => Map service request model to database entity data model.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AdminService.V1.Models.Request.BankRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AdminService.V1.Models.Request.PersonRequest">
+            <summary>
+            PersonRequest
+            </summary>
+        </member>
+        <member name="M:AdminService.V1.Models.Request.PersonRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AdminService.V1.Models.Request.PersonRequest"/> class.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Request.PersonRequest.AccountNumber">
+            <summary>
+            Gets or sets AccountNumber.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Request.PersonRequest.FirstName">
+            <summary>
+            Gets or sets FirstName.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Request.PersonRequest.MiddleName">
+            <summary>
+            Gets or sets MiddleName.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Request.PersonRequest.LastName">
+            <summary>
+            Gets or sets LastName.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Request.PersonRequest.DisplayName">
+            <summary>
+            Gets or sets DisplayName.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Request.PersonRequest.Ssn">
+            <summary>
+            Gets or sets Ssn.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Request.PersonRequest.IsActive">
+            <summary>
+            Gets or sets IsActive.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Request.PersonRequest.CreatedBy">
+            <summary>
+            Gets or sets CreatedBy.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Request.PersonRequest.CreatedDate">
+            <summary>
+            Gets or sets CreatedDate.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Request.PersonRequest.Banks">
+            <summary>
+            Gets or sets Banks.
+            </summary>
+        </member>
+        <member name="T:AdminService.V1.Models.Shared.ErrorDetails">
+            <summary>
+            This object describes errors that occur. It is only valid for responses, and ignored in requests.
+            </summary>
+        </member>
+        <member name="P:AdminService.V1.Models.Shared.ErrorDetails.ErrorCode">
+            <summary>
+            An error code associated with the error.
+            </summary>
+            <value>An error code associated with the error.</value>
+        </member>
+        <member name="P:AdminService.V1.Models.Shared.ErrorDetails.Message">
+            <summary>
+            A short error message.
+            </summary>
+            <value>A short error message.</value>
+        </member>
+        <member name="T:AdminService.V1.Repository.BaseRepository">
+            <summary>
+            BaseRepository
+            </summary>
+        </member>
+        <member name="M:AdminService.V1.Repository.BaseRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AdminService.V1.Repository.BaseRepository"/> class.
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AdminService.V1.Repository.BaseRepository.GetSTDemoAdminContext">
+            <summary>
+            EsignatureData database context.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AdminService.V1.Repository.IPersonRepository">
+            <summary>
+            IBankRepository
+            </summary>
+        </member>
+        <member name="M:AdminService.V1.Repository.IPersonRepository.CreatePerson(AdminService.V1.Models.Request.PersonRequest)">
+            <summary>
+            Create a new person record.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AdminService.V1.Repository.PersonRepository">
+            <summary>
+            BankRepository
+            </summary>
+        </member>
+        <member name="M:AdminService.V1.Repository.PersonRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AdminService.V1.Repository.PersonRepository"/> class.
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:AdminService.V1.Repository.PersonRepository.CreatePerson(AdminService.V1.Models.Request.PersonRequest)">
+            <summary>
+            Create a new person record.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
